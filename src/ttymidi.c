@@ -55,7 +55,7 @@ int serial;
 static struct argp_option options[] =
 {
 	{"serialdevice" , 's', "DEV" , 0, "Serial device to use. Default = /dev/ttyUSB0", 0 },
-	{"baudrate"     , 'b', "BAUD", 0, "Serial port baud rate. Default = 31250", 0 },
+	{"baudrate"     , 'b', "BAUD", 0, "Serial port baud rate. Default = 115200", 0 },
 #ifdef DEBUG
 	{"verbose"      , 'v', 0     , 0, "For debugging: Produce verbose output", 0 },
 	{"printonly"    , 'p', 0     , 0, "Super debugging: Print values read from serial -- and do nothing else", 0 },
@@ -150,7 +150,7 @@ void arg_set_defaults(arguments_t *arguments)
 	arguments->verbose   = 0;
 	arguments->printonly = 0;
 #endif
-	arguments->baudrate  = 31250;
+	arguments->baudrate  = 115200;
 	strncpy(arguments->serialdevice, "/dev/ttyUSB0", MAX_DEV_STR_LEN);
 	strncpy(arguments->name, "ttymidi", MAX_DEV_STR_LEN);
 }
